@@ -3,6 +3,7 @@ html, body {
 }
 
 .container-main {
+    background-color: coral;
     width: 50%;
     height: 100%;
     margin: 0 auto;
@@ -51,6 +52,9 @@ nav {
 .right {
     float: right;
 }
+/*.btn.active{*/
+    /*background-color: blue;*/
+/*}*/
 
 @media only screen and (max-width: 800px) {
     .container-main {

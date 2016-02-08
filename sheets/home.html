@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget App</title>
+
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container container-main" ng-controller="BalanceCtrl">
+    <div class="page-header">
+        <h1>{{ budget }}<small>RON</small</h1>
+    </div>
+    <div class="align-center">
+        <div class="btn-group" role="group" >
+            <a href="" class="btn btn-primary" >Balance</a>
+            <a href="" class="btn btn-default" >Income</a>
+            <a href="" class="btn btn-default" >Spendings</a>
+        </div>
+    </div>
+
+    <div class="table-container" >
+        <table class="table table-hover">
+            <tbody>
+            <tr ng-repeat="item in transactions" ng-class="item.amount > 0 ? 'green' : 'red'">
+                <td>{{item.date}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.amount}}</td>
+                <td width="40">
+                    <button type="button" ng-click = "delTrans(item.id)" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="buttons">
+        <a href="/income" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Receive</a>
+        <a href="/expense" class="btn btn-default right">Spend <i class="glyphicon glyphicon-minus"></i></a>
+    </div>
+    <nav>
+        <ul class="pagination">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a href="#">Feb 2016</a></li>
+            <li><a href="#">Jan 2016</a></li>
+            <li><a href="#">Dec 2015</a></li>
+            <li><a href="#">Nov 2015</a></li>
+            <li><a href="#">Oct 2015</a></li>
+            <li><a href="#">Sep 2015</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
